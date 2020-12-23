@@ -5,13 +5,11 @@ FLAGS = -Wall
 
 all: isort txtfind
 
-isort: part1/main.c
-	$(CC) $(FLAGS) -o isort part1/main.c
+isort: isort.c
+	$(CC) $(FLAGS) -o isort isort.c
 
-txtfind: part2/main.c
-	$(CC) $(FLAGS) -o txtfind part2/main.c
+txtfind: txtfind.c
+	$(CC) $(FLAGS) -o txtfind txtfind.c
 
-runIsort: isort
-	./isort < part1/test1.txt
 clean:
-	rm *.o isort txtfind
+	rm isort txtfind
