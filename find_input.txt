@@ -1,7 +1,8 @@
-cat a
+for a
 
-this is a text file
+is a text file,bcat
 looking for the word cat
 the program should print also cats
 and crat and lcat but it shouldn’t
 print the word caats
+looking for the word cat

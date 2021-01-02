@@ -1,7 +1,8 @@
+
 /****************************************************************************
 * Eyal Levi ID.203249073
 * Assignment number 3
-* Name of project
+* https://github.com/LeviEyal
 ****************************************************************************/
 
 #include <stdio.h>
@@ -53,6 +54,7 @@ int getLine(char s[]){
         i++;
     }
     s[i] = 0;
+    // return scanf("%[^\n]%c", s);
     if(c!=EOF)
         return i+1;
     return i;

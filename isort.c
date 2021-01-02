@@ -1,29 +1,32 @@
+
 /****************************************************************************
 * Eyal Levi ID.203249073
 * Assignment number 3
-* Name of project
+* https://github.com/LeviEyal
 ****************************************************************************/
 #include <stdio.h>
 #define ARRAY_SIZE 50
 
 void shift_element(int *arr, int i){
-    int t = *(arr+i);
     for(int *j=arr+i; j>arr; j--){
         *j = *(j-1);
     }
-    *arr = t;
 }
 
 void insertion_sort(int *arr, int len){
     for(int i=1; i<len; i++){
         int corr = *(arr+i);
         if(*arr >= corr){
+            int t = *(arr+i);
             shift_element(arr, i);
+            *arr = t;
         }
         else{
             for(int j=i; j>=0; j--){
                 if(*(arr+j) < corr){
+                    int t = *(arr+i);
                     shift_element((arr+j+1), (i-j-1));
+                    *(arr+j+1) = t;
                     break;
                 }
             }
@@ -47,10 +50,11 @@ int main() {
         if(scanf("%d", (nums+i)) == 1)
             i++;
     }
+    printf("\nBefore sorting:\n");
     printArray(nums);
     insertion_sort(nums, ARRAY_SIZE);
-    // shift_element(nums+46, 3);
-    printf("\n\n");
+    printf("\nAfter sorting:\n");
     printArray(nums);
+    printf("\n");
     return 0;
 }
